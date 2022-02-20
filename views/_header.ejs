@@ -1,0 +1,28 @@
+<header>
+     <% if(!locals.user) {%>
+     <div id="main">
+          <h3 id="login">
+               <a href="/log-in">Log-In</a>
+          </h3>
+
+          <h3 id="singup">
+               <a href="/sing-in">Sing-up</a>
+          </h3>
+
+          <h3 id="google">
+               <a href="/users/auth/google">Google-login</a>
+          </h3>
+     </div>
+     <%}%>
+     <% if(locals.user){ %>
+          <div id="main">
+               <h3 id="login">
+                    <a href=""><%=user.name%></a>
+               </h3>
+     
+               <h3 id="singup">
+                    <a href="/account/sing-out">Log-Out</a>
+               </h3>
+          </div>
+      <% } %>    
+</header>

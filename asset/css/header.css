@@ -1,0 +1,33 @@
+header{
+    background-image: url("./header2.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
+    text-align: center;
+    min-height: 30%;
+    /* background-attachment: fixed; */
+    /* background-size: auto; */
+
+}
+#login{
+  display: inline-block;
+  margin-right: 2%;
+}
+#singup{
+  display: inline-block;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+#google{
+  display: inline-block;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+#main h3 a{
+   color: aqua;
+
+}
+html{
+  margin: 0px;
+}

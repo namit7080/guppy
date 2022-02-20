@@ -1,0 +1,96 @@
+#maindiv{
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    align-content: center;
+
+}
+#maindiv h2{
+    color: rgb(144, 6, 236);
+    text-decoration:  wavy rgb(19, 19, 19);
+
+}
+
+#container div{
+    /* flex: 1 1 60px; */
+    flex-wrap: wrap;
+}
+#first{
+    position: relative;
+    display: inline-block;
+    width: 60%;
+    /* background-color: burlywood; */
+    align-items: center;
+  
+    
+    
+   
+    
+    
+}
+#second{
+    /* display: inline-block; */
+    height: inherit;
+   
+    
+
+}
+
+#email{
+    position: relative;
+    height: 3%;
+    width: 40%;
+    min-width: 5cm;
+    max-height: 1cm;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: large;
+    display: block;
+    opacity: 0.5;
+    margin: 5%;
+    color:  rgb(4, 0, 255);
+    margin-left: 15%;
+    
+
+}
+#password{
+    position: relative;
+    height: 3%;
+    width: 40%;
+    min-width: 5cm;
+    max-height: 1cm;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: large;
+    display: block;
+    opacity: 0.5;
+    margin: 5%;
+    color: rgb(4, 0, 255);
+    margin-left: 35%;
+}
+#submit{
+   height: 2.2rem;
+   width: 2cm;
+   opacity: 1;   
+   color: #857df3;
+   background-color: black;
+   border-radius: 1rem;
+   
+   
+
+}
+@media screen and (max-width: 750px) {
+    /* #first{
+        display: block !important;
+       
+    }
+    #second{
+        display: block !important;
+    } */
+    
+}
+::placeholder{
+    color: rgb(32, 32, 32);
+    opacity: 1;
+    font-weight: bold;
+}

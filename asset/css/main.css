@@ -1,0 +1,319 @@
+@media screen and (max-width:1000px) {
+    #post-form{
+        /* background-color: rgb(151, 108, 108) !important; */
+        text-align: center !important;
+    }
+     #mainprofile {
+        flex-direction: column !important;
+      }
+
+    #posttext{
+        background-color: rgb(53, 53, 53);
+        padding: 1rem;
+        border-radius: 1rem;
+        width: 500px;
+        height: 150px;
+       
+    }
+    #file{
+   
+        display: block;
+        margin-left: 40% !important;
+        margin-bottom: 7%;
+       
+    }
+    img{
+        width: 24%;
+        height: 10%;
+        /* margin-bottom: 1%; */
+    }
+    #chatbox{
+        margin-left: 2% !important;
+        position: sticky;
+        width: 40% !important;
+        /* background-color: azure; */
+        height: 300px;
+        border-style: dotted;
+        border-color: orange;
+        /* background-color: rgb(36, 36, 36); */
+    
+    }
+    #chat-message-input{
+      height: 1.7rem !important;
+    }
+    
+}
+
+
+#mainprofile{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap;
+    justify-content: space-between; */
+    
+}
+/* Post Form if user is Present */
+#post-form{
+    position: relative;
+    flex: 18%;
+    min-height: 10%;
+    /* background-color: aqua; */
+    padding: 1rem;
+    text-align: center;
+    padding-left: 1rem;
+}
+
+/* Post Container */
+#post-container{
+    height: auto;
+    position: relative;
+    /* min-height: 10%; */
+    flex: 45%;
+    text-align: center;
+}
+
+/* extra tag */
+#extra-tag{
+     /* position: relative; */
+     /* background-color: aquamarine; */
+     flex: 20%;
+     height: auto;
+     padding-top: 4%;
+     padding-left: 6px;
+    /* background-color: aqua; */
+}
+/* Post text color */
+#posttext{
+    background-color: rgb(53, 53, 53);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: orange;
+    margin-bottom: 3%;
+   
+}
+#post-form h3{
+    color: orange;
+}
+#file{
+   
+    display: block;
+    align-items: center;
+    margin-left: 20%;
+    margin-bottom: 7%;
+   
+}
+
+/* All POst Heading */
+#post-container h3{
+    color: orange;
+}
+
+/*  Each Post */
+#each-post{
+    background-color: rgb(53, 53, 53);
+    margin-bottom: 1%;
+}
+/*  First Tag  */
+#username{
+    color: pink;
+    border-color: rgb(158, 158, 158);
+    
+    border-style:groove;
+    overflow: scroll;
+    
+}
+/* Second tag content */
+#usercontent{
+   color: white;
+   text-align: left;
+   margin-bottom: 1%;
+
+}
+#button{
+    margin-bottom: -1%;
+    border-radius: 1rem;
+    background-color: rgb(170, 111, 3);
+}
+#comment{
+   border-radius: 0.2cm;
+   background-color: rgb(53, 53, 53);
+   color: orange;
+  
+
+}
+#content{
+    color: green;
+
+}
+
+#comment{
+    color: rgb(94, 197, 228);
+    /* display: inline-block; */
+}
+#delete-tag{
+    color: green;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    /* background-color: red; */
+    
+}
+#delete-tag a{
+    font-size: medium;
+    color: red;
+    margin-left: 2%;
+   
+}
+details{
+   
+    margin-top: 1%;
+    text-align: left;
+    margin-bottom: 4%;
+}
+
+/* For User Head */
+#userhead{
+    color: rgb(236, 201, 46);
+}
+img{
+    width: 25%;
+    height: 27%;
+    /* margin-bottom: 1%; */
+}
+#image{
+   margin: 1%;
+   border-radius: 0.1cm;
+   /* background-color: aquamarine; */
+
+
+}
+#delete-post{
+    margin-left: 2%;
+    color: red;
+}
+/* ---Post and Comment are completed till Now */
+
+.like-user{
+    color:rgb(251, 158, 173);
+    text-decoration:none ;
+}
+#like-user-out{
+    color:rgb(251, 158, 173);
+    text-decoration:none ;
+}
+.like-user:hover{
+    font-size: x-large;
+    
+}
+#post-like-container{
+    text-align: left;
+}
+
+
+
+
+
+/* Chatting Engine */
+#chatbox{
+    margin-left: 15%;
+    position: sticky;
+    width: 75%;
+    /* background-color: azure; */
+    height: 300px;
+    border-style:ridge;
+    border-color: orange;
+    /* background-color: rgb(36, 36, 36); */
+
+}
+#chatbox h4{
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: rgb(15, 4, 4);
+    /* background-color: chartreuse; */
+    margin: 2%;
+}
+#message-list{
+    margin: 0%;
+    overflow: scroll;
+    list-style: none;
+    padding: 10px;
+    height: 72%;
+    /* background-color: chartreuse; */
+}
+
+.other-message{
+    text-align: left;
+    /* background-color: black; */
+    width: 50%;
+    margin-bottom: 10%;
+   
+}
+
+
+.self-message{
+    padding: 0%;
+    margin-left: 45%;
+    width: 50%;
+    margin-bottom: 10%;
+    margin-top: 10%;
+   
+    /* background-color: rgb(65, 64, 64); */
+  
+
+}
+.self-message span{
+    /* position: absolute; */
+    color: white;
+    overflow: scroll;
+    display: block;
+    /* background-color: azure; */
+    /* background-color: brown; */
+}
+.other-message span{
+    display: block;
+ 
+    color: white;
+    overflow: scroll;
+    color: orange;
+    width: 65%;
+    /* background-color: azure; */
+    /* background-color: brown; */
+}
+.other-message sub{
+    opacity: 0.3;
+    position: relative;
+    color: white;
+    overflow: scroll;
+    /* background-color: rgb(195, 0, 255); */
+    width: 45%;
+    /* background-color: brown; */
+}
+.self-message sub{
+    opacity: 0.3;
+    position: relative;
+    color: white;
+    overflow: scroll;
+    /* background-color: rgb(195, 0, 255); */
+    width: 45%;
+    /* background-color: brown; */
+}
+#chat-message-input{
+    background-color: grey;
+    color: rgb(151, 245, 151);
+    width: 73%;
+    height: 2rem;
+}
+#send-message{
+    color: green;
+    background-color: orange;
+}
+#live-discussion summary{
+   color: rgb(151, 236, 13);
+   font-style: oblique;
+   font-size: x-large;
+
+}
+
+
+

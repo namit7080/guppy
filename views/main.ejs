@@ -1,0 +1,187 @@
+
+<main id="mainprofile">
+  <% if(locals.user) {%>
+<!-- If User is Prensent Than Post form -->
+    <div id="post-form">
+        <h3>New Post</h3>
+        <form action="/post/create" enctype="multipart/form-data" method="POST">
+          <textarea name="content" id="posttext" cols="28" rows="20" placeholder="Write Here..."></textarea>
+          <input type="file" name="avatar" placeholder="Any Picture (Optional)" id="file">
+          <input type="submit" value="Post It" id="buttonmy">
+        </form>
+    </div>
+
+  <% } %>
+  <!-- Post Container -->
+     <div id="post-container">
+       <h3>All-Post 🍀</h3>
+       <!-- Showing All Post -->
+      <% for(i of post){%>
+
+        
+           
+          <div id="each-post">
+             <!-- UserName -->
+              <div id="username">
+             
+
+            
+                
+                
+                <span id="userhead">@User:</span><%=i.user.name%>
+                <% if(locals.user && i.user.id==locals.user.id){ %>
+                  <a href="/delete/post/<%=i.id%>" id="delete-post"> <i class="fa fa-trash"></i></a>
+                <% } %>  
+              </div>
+              <!-- Post Image -->
+              <% if(i.avatar){%>
+              <div id="image">
+                <img src="<%=i.avatar%>" alt="<%=i.user.name%>">
+              </div>
+              <% } %>
+
+             <!-- Content of Post -->
+              <div id="usercontent">
+                      <%=i.content%>
+              </div>
+              <!-- Like of Each Post -->
+              <div id="post-like-container">
+                 <% if(locals.user){%>
+                    <a href="/likes/toggle/?id=<%=i._id%>&type=Post" class="like-user">
+                          <i class="fa fa-heart"></i>
+                           <%=i.likes.length%>
+                    </a>
+ 
+                 <%} else{%>
+                      <div id="like-user-out">
+                         <i class="fa fa-heart"></i> <%=i.likes.length%> 
+                      </div>
+                  <%}%> 
+              </div>
+           
+          </div>   
+          
+         
+      
+
+
+       <!-- Comments for each Post in Details -->
+    <details>
+          <!-- For Comment from but only if user is present -->
+        <% if(locals.user){%>
+          <form action="/post/comment" method="POST">
+           <textarea name="comment" id="comment" cols="70" rows="2" placeholder="Comment Here..."></textarea>
+           <input type="hidden" name="postid" value="<%=i._id%>">
+           <input type="submit" value="Comment ⚡️" id="button">
+         </form>
+        <%}%>
+
+
+    <summary id="content">Comments💀</summary>
+         <% for (j of i.comment){ %>
+          <div id="delete-tag">
+             
+             
+              <% if(locals.user){%>
+                  <a href="/likes/toggle/?id=<%=i._id%>&type=Post" class="like-user">
+                    <i class="fa fa-heart"></i>
+                    <%=i.likes.length%>
+                  </a>
+   
+               <%} else{%>
+                <span>
+                   <i class="fa fa-heart"></i> <%=i.likes.length%> 
+                </span>
+               <%}%> 
+           
+
+            <span id="userhead">@User</span><%=j.user.name%>
+             <% if(locals.user && j.user.id==locals.user.id){%>
+                 <a href="/delete/comment/<%=j.id%>"> <i class="fa fa-trash"></i></a>
+             <%}%>
+           
+
+            </div>
+            <p id="comment">
+              <%=j.content%>
+            </p>
+
+           
+              
+
+          <%}%>
+
+       </details>
+
+
+    <%}%>
+        
+
+     </div>
+<!-- Extra Tag  -->
+     <div id="extra-tag" class="extra">
+             <!-- Chatting engine  -->
+
+     <details id="live-discussion">    
+       <summary>Live Discussion 𐂐 for All Users</summary>   
+    <% if (locals.user){%>   
+         <div id="chatbox">
+           <h4>Live Chatting 💬</h4>
+
+           
+
+            <ul id="message-list">
+              <% for(message of Live){%>
+
+              <% if(locals.user.email!=message.email){%>
+                <li class="other-message">
+                
+                   <span>
+                    <%=message.message%>
+                  </span>
+                  <sub>
+                    <%=message.email%>
+                  </sub>
+                  
+                </li>
+                <% } else{%>
+                <li class="self-message">
+                   <span>
+                    -><%=message.message%>
+                  </span>
+                  <!-- <sub>
+                    <%=message.email%>
+                  </sub> -->
+                 
+                </li>
+              <%}%>
+              <%}%>
+            </ul>
+           
+            <div id="chat-message-input-container">
+              <input type="text" id="chat-message-input" placeholder="Type here..">
+              <button id="send-message">Send</button>
+             
+            </div>
+           
+
+         </div>    
+         <%}%>
+
+        </details> 
+
+
+     </div>
+
+    
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script>
+
+<% if (locals.user){%>
+<script>
+    new Chatengine('chatbox','<%= locals.user.email %>')
+</script>
+
+<%}%>
