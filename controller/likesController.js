@@ -12,9 +12,12 @@ module.exports.toggleLike= async function(req,res){
 
         // If Like for Post
         if(req.query.type=='Post'){
+           
             likeable= await Post.findById(req.query.id).populate('likes');
         }
         else{
+          
+
             likeable= await Comment.findById(req.query.id).populate('likes');
         }
 
@@ -23,11 +26,12 @@ module.exports.toggleLike= async function(req,res){
         let LikeExist=await Like.findOne({
                 user:req.user._id,
                 likeable:req.query.id,
-                onmode:req.query.type
+                onmodel:req.query.type
         })
 
         // If like present then delete it
         if(LikeExist){
+             
               likeable.likes.pull(LikeExist._id);
               likeable.save();
               LikeExist.remove();
@@ -40,8 +44,8 @@ module.exports.toggleLike= async function(req,res){
                likeable:req.query.id,
                onmodel:req.query.type    
              })
-           likeable.likes.push(newlike._id);
-           likeable.save();
+            likeable.likes.push(newlike._id);
+            likeable.save();
 
          }
          return res.redirect('/');
